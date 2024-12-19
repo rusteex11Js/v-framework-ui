@@ -1,6 +1,6 @@
-package org.example;
+package base;
 
-public class Main {
+public class DriverBase {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
