@@ -1,4 +1,4 @@
-package stepdefinitions;
+package test.stepdefinitions;
 
 public class Steps {
 }

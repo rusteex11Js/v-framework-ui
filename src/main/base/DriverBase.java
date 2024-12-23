@@ -1,4 +1,4 @@
-package base;
+package main.base;
 
 public class DriverBase {
     public static void main(String[] args) {

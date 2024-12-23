@@ -1,4 +1,4 @@
-package runner;
+package test.runner;
 
 public class CucumberTestRunner {
 }
