@@ -14,10 +14,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>4.27.0</selenium.version>
         <testng.version>7.9.0</testng.version>
+        <cucumber.version>7.20.1</cucumber.version>
+        <defaultSuiteFiles>src/test/resources/testng.xml</defaultSuiteFiles>
+        <suiteFile>${defaultSuiteFiles}</suiteFile>
+        <browser>chrome</browser>
+        <count>4</count>
+        <URL>https://cucumber.io/docs/guides/parallel-execution/#testng</URL>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -34,5 +39,51 @@
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+                <release>11</release>
+            </configuration>
+        </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0</version>
+        <inherited>true</inherited>
+        <configuration>
+            <properties>
+                <property>
+                    <name>dataproviderthreadcount</name>
+                    <value>${count}</value>
+                </property>
+            </properties>
+            <suiteXmlFiles>
+                <suiteXmlFile>${suiteFile}</suiteXmlFile>
+            </suiteXmlFiles>
+            <systemPropertyVariables>
+                <browser>${browser}</browser>
+                <ux>${URL}</ux>
+            </systemPropertyVariables>
+        </configuration>
+    </plugin>
+    </plugins>
+    </build>
 </project>
