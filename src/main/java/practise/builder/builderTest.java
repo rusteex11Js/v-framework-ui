@@ -11,5 +11,6 @@ public class builderTest {
                 .setStock(2)
                 .setShipping(true).build();
         System.out.println(product2);
+
     }
 }

@@ -19,7 +19,7 @@
         <suiteFile>${defaultSuiteFiles}</suiteFile>
         <browser>chrome</browser>
         <count>4</count>
-        <URL>https://cucumber.io/docs/guides/parallel-execution/#testng</URL>
+        <URL>https://demo.automationtesting.in/Register.html</URL>
     </properties>
 
     <dependencies>
@@ -51,6 +51,13 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>

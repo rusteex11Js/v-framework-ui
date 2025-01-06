@@ -1,10 +1,17 @@
 Feature: Sample test
 
-  Scenario: launch browser
+  Scenario: launch chrome
     Given launch browser
+    And set firstname "vinoth"
 
   Scenario: launch chrome
     Given launch browser
+    And set firstname "rustee"
 
-  Scenario: launch
+  Scenario: launch chrome
     Given launch browser
+    And set firstname "karlitto"
+
+  Scenario: launch chrome
+    Given launch browser
+    And set firstname "crespo"
