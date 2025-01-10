@@ -15,6 +15,7 @@
         <selenium.version>4.27.0</selenium.version>
         <testng.version>7.9.0</testng.version>
         <cucumber.version>7.20.1</cucumber.version>
+        <cucumber.java.version>7.20.1</cucumber.java.version>
         <defaultSuiteFiles>src/test/resources/testng.xml</defaultSuiteFiles>
         <suiteFile>${defaultSuiteFiles}</suiteFile>
         <browser>chrome</browser>
@@ -28,11 +29,11 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-chrome-driver</artifactId>-->
+<!--            <version>${selenium.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -48,14 +49,20 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>5.7.0</version>
+            <version>${cucumber.java.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!--        <dependency>-->
+<!--            <groupId>com.aventstack</groupId>-->
+<!--            <artifactId>extentreports</artifactId>-->
+<!--            <version>5.1.2</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
         <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>5.1.2</version>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version>
         </dependency>
 
     </dependencies>
@@ -85,6 +92,9 @@
             <suiteXmlFiles>
                 <suiteXmlFile>${suiteFile}</suiteXmlFile>
             </suiteXmlFiles>
+<!--            <includes>-->
+<!--                <include>**/CucumberTestRunner.class</include>-->
+<!--            </includes>-->
             <systemPropertyVariables>
                 <browser>${browser}</browser>
                 <ux>${URL}</ux>

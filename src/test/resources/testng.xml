@@ -5,8 +5,8 @@
     <test name="chromeTest">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="runner.CucumberTestRunner">
-            </class>
+            <class name="runner.CucumberTestRunner"/>
+            <class name="runner.CucumberFailedTestRunner"/>
         </classes>
     </test>
 

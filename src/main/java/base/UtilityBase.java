@@ -2,7 +2,6 @@ package base;
 
 import utils.ActionsUtils;
 import utils.ElementUtils;
-import utils.ReportUtils;
 import utils.WaitUtils;
 
 public class UtilityBase {
@@ -44,15 +43,5 @@ public class UtilityBase {
         }
         return actionsUtils;
     }
-
-    private ReportUtils reportUtils;
-
-    public ReportUtils getReportUtils(){
-        if (reportUtils == null){
-            reportUtils = new ReportUtils();
-        }
-        return reportUtils;
-    }
-
 
 }
